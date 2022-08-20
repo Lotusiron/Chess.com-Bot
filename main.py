@@ -1,4 +1,6 @@
-import pyautogui
+import pyautogui as pag
+import numpy
+import cv2
 from stockfish import Stockfish
 
 robot = Stockfish(path="/opt/homebrew/opt/stockfish/bin/stockfish", depth=20)
@@ -22,34 +24,29 @@ def get_best_move():
 
 
 def do_best_move(color):
+    move = robot.get_best_move()
+    x1 = int(ord(move[0])) - 97
+    y1 = int(move[1]) - 1
+    x2 = int(ord(move[2])) - 97
+    y2 = int(move[3]) - 1
     if color == "white":
         a1_position = white_a1_position
-        move = robot.get_best_move()
-        x1 = int(ord(move[0])) - 97
-        y1 = int(move[1]) - 1
-        x2 = int(ord(move[2])) - 97
-        y2 = int(move[3]) - 1
-        pyautogui.moveTo(a1_position[0] + (x1 * step), a1_position[1] - (y1 * step))
-        pyautogui.leftClick()
-        pyautogui.leftClick()
-        pyautogui.moveTo(a1_position[0] + (x2 * step), a1_position[1] - (y2 * step))
-        pyautogui.leftClick()
+        pag.moveTo(a1_position[0] + (x1 * step), a1_position[1] - (y1 * step))
+        pag.leftClick()
+        pag.leftClick()
+        pag.moveTo(a1_position[0] + (x2 * step), a1_position[1] - (y2 * step))
+        pag.leftClick()
         robot.make_moves_from_current_position([move])
     else:
         a1_position = black_a1_position
-        move = robot.get_best_move()
-        x1 = int(ord(move[0])) - 97
-        y1 = int(move[1]) - 1
-        x2 = int(ord(move[2])) - 97
-        y2 = int(move[3]) - 1
-        pyautogui.moveTo(a1_position[0] - (x1 * step), a1_position[1] + (y1 * step))
-        pyautogui.leftClick()
-        pyautogui.leftClick()
-        pyautogui.moveTo(a1_position[0] - (x2 * step), a1_position[1] + (y2 * step))
-        pyautogui.leftClick()
+        pag.moveTo(a1_position[0] - (x1 * step), a1_position[1] + (y1 * step))
+        pag.leftClick()
+        pag.leftClick()
+        pag.moveTo(a1_position[0] - (x2 * step), a1_position[1] + (y2 * step))
+        pag.leftClick()
         robot.make_moves_from_current_position([move])
 
-    pyautogui.leftClick(1416, 695)
+    pag.leftClick(1416, 695)
 
 
 def main():
