@@ -11,7 +11,7 @@ menu = "1-opponent move : 2-Best move"
 # image find center pixel and check
 # color if yellow that is starting
 # x if color is end position
-
+# I love Coding
 def opponent_move(oppmove):
     if robot.is_move_correct(oppmove):
         robot.make_moves_from_current_position([oppmove])
