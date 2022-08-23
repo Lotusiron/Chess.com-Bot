@@ -14,7 +14,3 @@ class ChessVision:
             screenshot = np.array(screenshot)
             screenshot = cv2.cvtColor(screenshot, cv2.COLOR_RGB2BGR)
             cv2.imshow('ChessVisor', screenshot)
-
-
-CV = ChessVision()
-CV.get_screenshot()
