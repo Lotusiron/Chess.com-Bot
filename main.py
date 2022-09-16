@@ -33,14 +33,12 @@ def do_best_move(color):
         a1_position = white_a1_position
         pag.moveTo(a1_position[0] + (x1 * step), a1_position[1] - (y1 * step))
         pag.leftClick()
-        pag.leftClick()
         pag.moveTo(a1_position[0] + (x2 * step), a1_position[1] - (y2 * step))
         pag.leftClick()
         robot.make_moves_from_current_position([move])
     else:
         a1_position = black_a1_position
         pag.moveTo(a1_position[0] - (x1 * step), a1_position[1] + (y1 * step))
-        pag.leftClick()
         pag.leftClick()
         pag.moveTo(a1_position[0] - (x2 * step), a1_position[1] + (y2 * step))
         pag.leftClick()
