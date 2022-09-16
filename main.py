@@ -1,11 +1,11 @@
 import pyautogui as pag
-from ChessVision import ChessVision
+#   from ChessVision import ChessVision
 from stockfish import Stockfish
 
 robot = Stockfish(path="/opt/homebrew/opt/stockfish/bin/stockfish", depth=20)
-white_a1_position = (236, 734)
-black_a1_position = (746, 220)
-step = 75
+white_a1_position = (82, 865)
+black_a1_position = (687, 270)
+step = 90
 menu = "1-opponent move : 2-Best move"
 # for computer vision find yellow pixel
 # should be two seperate squares in
