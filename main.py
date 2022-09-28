@@ -48,11 +48,9 @@ def do_best_move(color):
 
 
 def main():
+
     color = input("color: ")
-    if color == "white":
-        my_turn = True
-    else:
-        my_turn = False
+    my_turn = True if color == "white" else False
     while True:
         if my_turn:
             do_best_move(color)
@@ -66,22 +64,6 @@ def main():
             my_turn = True
 
 
-
-        # if menuChoice == 1:
-        #     oppmove = input('Input opponent move:')
-        #     opponent_move(oppmove)
-        #     print(robot.get_board_visual())
-        #     menuChoice = int(input(menu))
-        # elif menuChoice == 2:
-        #     move = get_best_move()
-        #     print(move)
-        #     robot.make_moves_from_current_position([move])
-        #     menuChoice = int(input(menu))
-        # elif menuChoice == 3:
-        #     do_best_move(color)
-        #     menuChoice = int(input(menu))
-        # else:
-        #     break
 
     pass
 
