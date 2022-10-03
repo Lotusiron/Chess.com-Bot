@@ -1,5 +1,4 @@
 import pyautogui as pag
-#   from ChessVision import ChessVision
 from stockfish import Stockfish
 
 robot = Stockfish(path="stockfish", depth=20)
@@ -7,13 +6,6 @@ white_a1_position = (82, 865)
 black_a1_position = (687, 270)
 step = 90
 menu = "1-opponent move : 2-Best move"
-# for computer vision find yellow pixel
-# should be two seperate squares in
-# image find center pixel and check
-# color if yellow that is starting
-# x if color is end position
-
-
 def opponent_move(oppmove):
     if robot.is_move_correct(oppmove):
         robot.make_moves_from_current_position([oppmove])
